@@ -3,7 +3,7 @@ from __future__ import print_function
 
 import os
 import os.path as osp
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import time
 import argparse
 import numpy as np

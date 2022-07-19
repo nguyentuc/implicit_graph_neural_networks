@@ -1,31 +1,35 @@
 # Implicit Graph Neural Networks
 This repository is the official PyTorch implementation of "Implicit Graph Neural Networks".
 
-Fangda Gu*, Heng Chang*, Wenwu Zhu, Somayeh Sojoudi, Laurent El Ghaoui, [Implicit Graph Neural Networks](https://proceedings.neurips.cc/paper/2020/file/8b5c8441a8ff8e151b191c53c1842a38-Paper.pdf), NeurIPS 2020.
+Fangda Gu*, Heng Chang*, Wenwu Zhu, Somayeh Sojoudi, Laurent El Ghaoui. Implicit Graph Neural Networks, NeurIPS 2020.
 
-## Requirements
-The script has been tested running under Python 3.6.9, with the following packages installed (along with their dependencies):
-* pytorch (tested on 1.6.0)
-* torch_geometric (tested on 1.6.1)
-* scipy (tested on 1.5.2)
-* numpy (tested on 1.19.2)
+
+## New environments: cuda 11.4, pytorch 1.12
+Install pytorch: 
+* conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+Install pytorch geometric: 
+* pip install torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cu113.html
+* pip install torch-sparse -f https://data.pyg.org/whl/torch-1.12.0+cu113.html
+* pip install torch-geometric
+Install scipy, numpy and networkx
+* conda install -c conda-forge scipy
+* conda install numpy
+* conda install networkx
+
 
 ## Tasks
-We provide examples on the tasks of node classification and graph classification consistent with the experimental results of our paper. Please refer to ``nodeclassification`` and ``graphclassification`` for usage.
+There are two task ``nodeclassification`` and ``graphclassification``.
 
-## Reference
-- If you find ``IGNN`` useful in your research, please cite the following in your manuscript:
+## Run node classification task
+In the folder nodeclassification: python train_IGNN_{name_dataset}.py
 
+## Datasets
+For Amazon dataset, please use the following dropbox link to download:
 ```
-@inproceedings{gu2020implicit,
- author = {Gu, Fangda and Chang, Heng and Zhu, Wenwu and Sojoudi, Somayeh and El Ghaoui, Laurent},
- booktitle = {Advances in Neural Information Processing Systems},
- pages = {11984--11995},
- publisher = {Curran Associates, Inc.},
- title = {Implicit Graph Neural Networks},
- volume = {33},
- year = {2020}
-}
-
+https://www.dropbox.com/sh/3gwr2wgh455q9pi/AAB0i6EQimVGslrqtsTIWsL0a?dl=0
 ```
+Then put the `amazon-all` folder under the `data` folder.
+
+## Run node graph task
+In the folder nodeclassification: python train_IGNN.py --dataset {name_dataset}
 
